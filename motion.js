@@ -10,7 +10,8 @@ board.on("ready", function() {
 
   // Create a new `motion` hardware instance.
   var motion = new five.Motion({
-    pin: "B7"
+    pin: "B7",
+    freq: 1000
   });
 
   // "calibrated" occurs once, at the beginning of a session,
@@ -34,6 +35,7 @@ board.on("ready", function() {
   //   or every 25ms. Uncomment the following to see all
   //   motion detection readings.
   motion.on("data", function(data) {
+    
     console.log(data);
   });
 });
